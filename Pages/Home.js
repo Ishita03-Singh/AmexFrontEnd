@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, SafeAreaView, ScrollView,Button } from 'react-native';
+import { View, Text, Image, StyleSheet, SafeAreaView, ScrollView,Button,TouchableOpacity,handlePress} from 'react-native';
 const profileimg = require("../assets/user (1).png");
 const leaderboard = require("../assets/ranking (1).png");
 
@@ -12,31 +12,35 @@ const Home = ({navigation}) => {
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <View style={styles.header}>
           <View style={styles.profileSection}>
+          <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
             <Image
               source={profileimg}
               style={styles.profileImage}
-            />
+            /></TouchableOpacity>
             <View style={styles.profileText}>
               <Text style={styles.helloText}>Hello!</Text>
               <Text style={styles.nameText}>Chandni</Text>
             </View>
           </View>
           <View style={styles.iconSection}>
+          <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
             <Image
               source={ leaderboard }
               style={styles.headerIcon}
-            />
+            /></TouchableOpacity>
+            <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
             <Image
                source={require('../assets/notification.png')}
               style={styles.headerIcon}
-            />
+            /></TouchableOpacity>
+            <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
             <Image
                source={require('../assets/chatbot.png')}
               style={styles.headerIcon}
-            />
+            /></TouchableOpacity>
           </View>
         </View>
-        
+        <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
         <View style={styles.expenseCard}>
           <View style={styles.expenseTextcontainer}>
           <Text style={styles.expenseTitle}>Total Expense</Text>
@@ -49,111 +53,127 @@ const Home = ({navigation}) => {
             source={require('../assets/ExpenseTree.png')}
             style={styles.expenseImage}
           />
-        </View>
+        </View></TouchableOpacity>
 
         <View style={styles.circleMenu}>
+        <TouchableOpacity style={styles.touchableOpacity} onPress={() => navigation.navigate('Rewards')}>
           <View style={styles.circleMenuCircle}>
           <Image
             source={require('../assets/rewards.png')}
             style={styles.circleMenuItem}
           />
-          <Button
-        title="Rewards"
-        onPress={() => navigation.navigate('Rewards')}
-        style={styles.button}
-      />
-
-          {/* <Text style={{color:"white",fontWeight:'bold',paddingTop:1}}>Rewards</Text> */}
-          </View>
+           <Text style={{color:"white",fontWeight:'bold',paddingTop:1}}>Rewards</Text>
+           
+          </View></TouchableOpacity>
+          <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
           <View style={styles.circleMenuCircle}>
           <Image
             source={require('../assets/earth.png')}
             style={styles.circleMenuItem}
           />
           <Text style={{color:"white",fontWeight:'bold',paddingTop:1}}>News</Text>
-          </View>
+          </View></TouchableOpacity>
+          <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
           <View style={styles.circleMenuCircle}>
           <Image
             source={require('../assets/event.png')}
             style={styles.circleMenuItem}
           />
           <Text style={{color:"white",fontWeight:'bold',paddingTop:1}}>Events</Text>
-          </View>
+          </View></TouchableOpacity>
+          <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
           <View style={styles.circleMenuCircle}>
           <Image
             source={require('../assets/schemes.png')}
             style={styles.circleMenuItem}
           />
           <Text style={{color:"white",fontWeight:'bold',paddingTop:1}}>Schemes</Text>
-          </View>
+          </View></TouchableOpacity>
           
 
         </View>
 
         <View style={styles.featureGrid}>
+        
           <View style={styles.featureItem}>
+          <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
             <Image
                source={require('../assets/budget.png')}
               style={styles.featureImage}
-            />
+            /></TouchableOpacity>
+            <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
                <View style={styles.featureTextView}>
                    <Text style={styles.featureText}>Expense Tracker</Text>
                </View>
-
+           </TouchableOpacity>
           </View>
+          
           <View style={styles.featureItem}>
+          <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
             <Image
                source={require('../assets/earning.png')}
               style={styles.featureImage}
-            />
+            /></TouchableOpacity>
+            <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
              <View style={styles.featureTextView}>
                    <Text style={styles.featureText}>Investment Manager</Text>
                </View>
-            
+            </TouchableOpacity>
           </View>
+          
           <View style={styles.featureItem}>
+          <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
             <Image
                source={require('../assets/retirement (2).png')}
               style={styles.featureImage}
-            />
+            /></TouchableOpacity>
+            <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
             <View style={styles.featureTextView}>
                    <Text style={styles.featureText}>Retirement Planner</Text>
-               </View>
+               </View></TouchableOpacity>
           </View>
           <View style={styles.featureItem}>
+          <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
             <Image
                source={require('../assets/money (2).png')}
               style={styles.featureImage}
-            />
+            /></TouchableOpacity>
+            <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
             <View style={styles.featureTextView}>
                    <Text style={styles.featureText}>Goal Setter</Text>
                </View>
+              </TouchableOpacity>
           </View>
         </View>
         
         
       </ScrollView>
       <View style={styles.footer}>
+      <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
           <Image
              source={require('../assets/homelogoblue.png')}
             style={styles.footerIcon}
-          />
+          /></TouchableOpacity>
+          <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
           <Image
             source={require('../assets/explogo.png')}
             style={styles.footerIcon}
-          />
+          /></TouchableOpacity>
+          <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
           <Image
              source={require('../assets/invlogo.png')}
             style={styles.footerIcon}
-          />
+          /></TouchableOpacity>
+          <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
           <Image
              source={require('../assets/retlogo.png')}
             style={styles.footerIcon}
-          />
+          /></TouchableOpacity>
+          <TouchableOpacity style={styles.touchableOpacity} onPress={handlePress}>
           <Image
              source={require('../assets/goalLogo.png')}
             style={styles.footerIcon}
-          />
+          /></TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
@@ -337,9 +357,7 @@ const styles = StyleSheet.create({
     height: 40,
 
   },
-  button:{
-    marginTop:20,
-  },
+  
 });
 
 export default Home;
